@@ -11,7 +11,11 @@ const camera = new THREE.PerspectiveCamera(
 const renderer = new THREE.WebGLRenderer();
 
 renderer.setSize(window.innerWidth, window.innerHeight);
-document.body.appendChild(renderer.domElement);
+if (document.getElementById('day1') != null) {
+  document.getElementById('day1')?.appendChild(renderer.domElement);
+} else {
+  document.body.appendChild(renderer.domElement);
+}
 
 const geometry = new THREE.BoxGeometry(2, 2, 2);
 const material = new THREE.MeshBasicMaterial({
